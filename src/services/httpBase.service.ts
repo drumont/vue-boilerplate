@@ -14,7 +14,7 @@ export abstract class HttpBaseService {
         this.token = token;
 
         this.initializeRequestInterceptor();
-        //this.initializeResponseInterceptor();
+        this.initializeResponseInterceptor();
     }
 
     private initializeRequestInterceptor = () => {
@@ -22,13 +22,27 @@ export abstract class HttpBaseService {
     };
 
     private initializeResponseInterceptor = () => {
-        this.instance.interceptors.response.use(response => {
-        }, this.handleError);
+        this.instance.interceptors.response.use(
+            response => {
+                // if (response.headers && response.headers.authorization) {
+                //     const responseToken = (response.headers.authorization as string).split(' ')[1];
+                //     this.token = responseToken;
+                //     console.log('hashToken ' + this.token)
+                //     //localStorage.setItem('hashToken', this.token);
+                // }
+                return response;
+            },
+            error => {
+                return Promise.reject(error)
+            }
+        );
     }
 
     private handleRequest = (config: AxiosRequestConfig) => {
         //config.headers['Authorization'] = `Bearer ${this.token}`;
-        config.headers['Authorization'] = `Bearer XXXXXXXXXXXXXXX`;
+        if (config.headers) {
+            config.headers['Authorization'] = `Bearer XXXXXXXXXXXXXXX`;
+        }
         return config;
     };
 
@@ -42,6 +56,7 @@ export abstract class HttpBaseService {
             //     return this.instance(originalRequest);
             // }
         }
+
     }
 
 }
