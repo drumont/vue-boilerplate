@@ -1,0 +1,12 @@
+{
+  "errors": [
+    {
+      "code": 500,
+      "message": "Erreur interne du serveur"
+    },
+    {
+      "code": 1001,
+      "message": "Erreur de la base de données"
+    }
+  ]
+}

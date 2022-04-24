@@ -5,14 +5,20 @@
       {{ this.getCreatedNodes }}
     </div>
     <div class="row">
-      <button class="action-button" @click="showToast">Show toast</button>
+      <button
+        class="action-button"
+        @click="showToast"
+      >
+        Show toast
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
+import * as langHelpers from "@/helpers/lang.helpers";
 export default Vue.extend({
   name: 'NodeTable',
   data() {
@@ -24,7 +30,7 @@ export default Vue.extend({
   },
 
   methods: {
-    ...mapActions('admin', ["searchNodes", "addNodes"]),
+    ...mapActions('admin', ['searchNodes', 'addNodes']),
 
     showToast() {
       this.$toast.success("I'm a toast!");

@@ -25,6 +25,6 @@ export class ApiResponse<T> {
 }
 
 export interface ApiError {
-    code: number
+    error_code: number
     message: string
 }

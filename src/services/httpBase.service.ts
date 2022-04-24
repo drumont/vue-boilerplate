@@ -1,4 +1,4 @@
-import axios, {AxiosError, AxiosInstance, AxiosRequestConfig} from "axios";
+import axios, {AxiosError, AxiosInstance, AxiosRequestConfig} from 'axios';
 
 export abstract class HttpBaseService {
     protected instance: AxiosInstance
@@ -41,7 +41,7 @@ export abstract class HttpBaseService {
     private handleRequest = (config: AxiosRequestConfig) => {
         //config.headers['Authorization'] = `Bearer ${this.token}`;
         if (config.headers) {
-            config.headers['Authorization'] = `Bearer XXXXXXXXXXXXXXX`;
+            config.headers['Authorization'] = 'Bearer XXXXXXXXXXXXXXX';
         }
         return config;
     };

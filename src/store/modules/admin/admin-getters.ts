@@ -1,7 +1,7 @@
-import { GetterTree } from "vuex";
-import { RootState } from "@/store/types"
+import { GetterTree } from 'vuex';
+import { RootState } from '@/store/types'
 import { AdminState } from './types'
-import {Node} from "@/models/node/Node";
+import {Node} from '@/models/node/Node';
 
 export const getters: GetterTree<AdminState, RootState> = {
 

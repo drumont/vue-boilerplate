@@ -2,9 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Toast from "vue-toastification";
+import Toast from 'vue-toastification';
 import 'vue-toastification/dist/index.css'
-import {PluginOptions} from "vue-toastification/dist/types/src/types";
+import {PluginOptions} from 'vue-toastification/dist/types/src/types';
+import { i18n } from '@/plugins/i18n';
+import helpers from '@/helpers';
 
 Vue.config.productionTip = false
 
@@ -20,8 +22,11 @@ const options: PluginOptions = {
 
 Vue.use(Toast, options);
 
+Vue.use(helpers)
+
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

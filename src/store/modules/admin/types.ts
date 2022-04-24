@@ -1,4 +1,4 @@
-import {Node} from "@/models/node/Node";
+import {Node} from '@/models/node/Node';
 
 export interface AdminState {
     pageOptions: Record<number, unknown>,

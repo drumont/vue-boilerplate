@@ -1,6 +1,6 @@
-import { HttpBaseService } from "@/services/httpBase.service";
-import {ApiResponse} from "@/models/http/ApiResponse";
-import { Node } from "@/models/node/Node";
+import { HttpBaseService } from '@/services/httpBase.service';
+import {ApiResponse} from '@/models/http/ApiResponse';
+import { Node } from '@/models/node/Node';
 
 export class NodeService extends HttpBaseService{
 
@@ -54,13 +54,13 @@ export class NodeService extends HttpBaseService{
     public addNodes() : Promise<ApiResponse<Node[]>> {
 
         const payload = {
-            "contents_requests": [
+            'contents_requests': [
                 {
-                    "name": "conten",
-                    "display_name": "string",
-                    "node_type": "content",
-                    "value": {},
-                    "navigation_path": "/test/content"
+                    'name': 'conten',
+                    'display_name': 'string',
+                    'node_type': 'content',
+                    'value': {},
+                    'navigation_path': '/test/content'
                 }
             ]
         }
